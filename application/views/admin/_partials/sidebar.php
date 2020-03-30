@@ -28,26 +28,19 @@
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item  <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-	<i class="fas fa-fw fa-boxes"></i>
-	<span>Products</span>
-  </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-	<div class="bg-white py-2 collapse-inner rounded">
-	  <h6 class="collapse-header">Products:</h6>
-		<a class="dropdown-item" href="<?php echo site_url('admin/products/add') ?>">New Product</a>
-		<a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Product</a>
-	</div>
-  </div>
+<li class="nav-item <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
+	<a class="nav-link" href="<?php echo site_url('admin/products') ?>">
+		<i class="fas fa-fw fa-boxes"></i>
+		<span>Products</span></a>
 </li>
 
-<li class="nav-item">
-	<a class="nav-link" href="#">
+<li class="nav-item <?php echo $this->uri->segment(2) == 'users' ? 'active': '' ?>">
+	<a class="nav-link" href="<?php echo site_url('admin/users') ?>">
 		<i class="fas fa-fw fa-users"></i>
 		<span>Users</span></a>
 </li>
-<li class="nav-item">
+
+<li class="nav-item <?php echo $this->uri->segment(2) == 'settings' ? 'active': '' ?>">
 	<a class="nav-link" href="#">
 		<i class="fas fa-fw fa-cog"></i>
 		<span>Settings</span></a>
