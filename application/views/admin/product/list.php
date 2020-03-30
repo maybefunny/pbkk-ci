@@ -59,7 +59,7 @@
 										<td width="250">
 											<a href="<?php echo site_url('admin/products/edit/'.$product->product_id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')"
+											<a onclick="deleteConfirm('<?php echo $product->product_id ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
 									</tr>
@@ -78,5 +78,30 @@
 	<?php $this->load->view("admin/_partials/scrolltop.php") ?>
 	<?php $this->load->view("admin/_partials/modal.php") ?>
 	<?php $this->load->view("admin/_partials/js.php") ?>
+	<script src="<?php echo base_url("/assets/js/modal.js"); ?>"></script>
+	<script>
+		function deleteConfirm(id){
+            makeModal(
+                `Konfirmasi Hapus Produk`,
+                `Apakah anda yakin akan menghapus produk dengan id ${id}?`,
+                [
+                    {
+                        action:`deleteAction('${id}');`,
+                        value:`Hapus`,
+                        class:`btn-danger`
+                    },
+                    {
+                        action:`noAction();`,
+                        value:`Batal`,
+                        class:`btn-primary`
+                    }
+                ]
+			);
+		}
+
+		function deleteAction(id){
+        	window.location.href = `/admin/products/delete/${id}`
+		}
+	</script>
 	
 </body>
