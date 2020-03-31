@@ -28,6 +28,13 @@
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item <?php echo $this->uri->segment(2) == 'transactions' ? 'active': '' ?>">
+	<a class="nav-link" href="<?php echo site_url('transactions') ?>">
+		<i class="fas fa-fw fa-list"></i>
+		<span>Transactions</span></a>
+</li>
+
+<?php if( $this->session->user_logged->role === "admin" ){ ?>
 <li class="nav-item <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
 	<a class="nav-link" href="<?php echo site_url('admin/products') ?>">
 		<i class="fas fa-fw fa-boxes"></i>
@@ -39,6 +46,7 @@
 		<i class="fas fa-fw fa-users"></i>
 		<span>Users</span></a>
 </li>
+<?php } ?>
 
 <li class="nav-item <?php echo $this->uri->segment(2) == 'settings' ? 'active': '' ?>">
 	<a class="nav-link" href="#">
