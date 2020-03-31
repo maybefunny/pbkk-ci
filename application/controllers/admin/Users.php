@@ -8,8 +8,9 @@ class Users extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model("user_model");
+		$this->load->model("user_model");
 		if($this->user_model->isNotLogin()) redirect(site_url('admin/login'));
+		if($this->user_model->role !== "admin") redirect(site_url('admin/overview'));
     }
 
     public function index()
