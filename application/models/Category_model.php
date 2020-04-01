@@ -4,7 +4,6 @@ class Category_model extends CI_Model
 {
     private $_table = "categories";
 
-    public $id;
     public $name;
 
     public function rules()
@@ -29,7 +28,7 @@ class Category_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-		$this->category_name = $post["category_name"];
+		$this->name = $post["category_name"];
         $this->db->insert($this->_table, $this);
     }
 
