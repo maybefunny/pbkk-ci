@@ -335,17 +335,21 @@
 							{
 								action:`printSummary();`,
 								value:`Cetak`,
-								class:`btn-primary`
+								class:`btn-info`
 							},
 							{
-								action:`noAction('');`,
-								value:`Batal`,
-								class:`btn-danger`
+								action:`done();`,
+								value:`Selesai`,
+								class:`btn-primary`
 							}
 						]
 					)
 				}
 			})
+		}
+		
+		function done(){
+			window.location.replace("<?php echo base_url("/transactions") ?>");
 		}
 
 		function printSummary(){

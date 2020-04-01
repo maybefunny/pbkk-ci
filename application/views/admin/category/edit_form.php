@@ -45,7 +45,7 @@
 								<div class="form-group">
 									<label for="category_name">Name*</label>
 									<input class="form-control <?php echo form_error('category_name') ? 'is-invalid':'' ?>"
-									type="text" name="category_name" placeholder="Product category_name" value="<?php echo $category->name ?>" />
+									type="text" name="category_name" placeholder="Product category_name" value="<?php echo $category->category_name ?>" />
 									<div class="invalid-feedback">
 										<?php echo form_error('category_name') ?>
 									</div>
