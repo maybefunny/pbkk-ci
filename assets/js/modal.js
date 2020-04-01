@@ -5,8 +5,10 @@ function makeModal(title, content, buttons) {
     myModal += '<div class="modal-dialog">';
     myModal += '<div class="modal-content">';
     myModal += '<div class="modal-header">';
-    // myModal += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-    myModal += '<h4 class="modal-title" id="myModalLabel">' + title + '</h4>';
+		myModal += '<h4 class="modal-title" id="myModalLabel">' + title + '</h4>';
+		myModal += '<button class="close" type="button" data-dismiss="modal" aria-label="Close">';
+		myModal += '<span aria-hidden="true">×</span>';
+		myModal += '</button>';
     myModal += '</div>';
     myModal += '<div class="modal-body">';
     myModal += content;

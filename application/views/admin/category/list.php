@@ -20,13 +20,13 @@
 				<div class="container-fluid">
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">User List</h1>
+						<h1 class="h3 mb-0 text-gray-800">Category List</h1>
 					</div>
 
 					<!-- DataTables -->
 					<div class="card mb-3">
 						<div class="card-header">
-							<a href="<?php echo site_url('admin/users/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+							<a href="<?php echo site_url('admin/categories/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 						</div>
 						<div class="card-body">
 
@@ -34,33 +34,30 @@
 								<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>Username</th>
-											<th>Email</th>
-											<th>Role</th>
-											<th>Created at</th>
+											<th>id</th>
+											<th>Name</th>
+<?php if( $this->session->user_logged->role === "admin" ){ ?>
 											<th>Action</th>
+<?php } ?>
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach ($users as $user): ?>
+										<?php foreach ($categories as $category): ?>
 										<tr>
 											<td width="150">
-												<?php echo $user->username ?>
+												<?php echo $category->id ?>
 											</td>
-											<td>
-												<?php echo $user->email ?>
+											<td width="150">
+												<?php echo $category->category_name ?>
 											</td>
-											<td>
-												<?php echo $user->role ?>
-											</td>
-											<td class="small">
-												<?php echo $user->role ?>
+<?php if( $this->session->user_logged->role === "admin" ){ ?>
 											<td width="250">
-												<a href="<?php echo site_url('admin/users/edit/'.$user->user_id) ?>"
+												<a href="<?php echo site_url('admin/categories/edit/'.$category->id) ?>"
 												class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-												<a onclick="deleteConfirm('<?php echo $user->user_id ?>')"
+												<a onclick="deleteConfirm('<?php echo $category->id ?>')"
 												href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 											</td>
+<?php } ?>
 										</tr>
 										<?php endforeach; ?>
 
@@ -86,11 +83,11 @@
 		} );
 		function deleteConfirm(id){
             makeModal(
-                `Konfirmasi Hapus User`,
-                `Apakah anda yakin akan menghapus user dengan id ${id}?`,
+                `Konfirmasi Hapus Produk`,
+                `Apakah anda yakin akan menghapus produk dengan id ${id}?`,
                 [
                     {
-                        action:`deleteAction(${id});`,
+                        action:`deleteAction('${id}');`,
                         value:`Hapus`,
                         class:`btn-danger`
                     },
@@ -104,7 +101,7 @@
 		}
 
 		function deleteAction(id){
-        	window.location.href = `/admin/users/delete/${id}`
+        	window.location.href = `/admin/categories/delete/${id}`
 		}
 	</script>
 	

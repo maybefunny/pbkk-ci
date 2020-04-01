@@ -13,4 +13,8 @@ class Overview extends CI_Controller {
         // load view admin/overview.php
         $this->load->view("admin/overview");
 	}
+	public function bulanan()
+	{
+		$this->load->view('admin/overview.php');
+	}
 }

@@ -15,6 +15,10 @@ class Product_model extends CI_Model
         return [
             ['field' => 'name',
             'label' => 'Name',
+			'rules' => 'required'],
+			
+			['field' => 'category_id',
+            'label' => 'Category',
             'rules' => 'required'],
 
             ['field' => 'price',
@@ -29,7 +33,8 @@ class Product_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+		$this->db->join('categories', 'id = category_id', 'left');
+		return $this->db->get($this->_table)->result();
     }
     
     public function getById($id)
@@ -41,6 +46,7 @@ class Product_model extends CI_Model
     {
         $post = $this->input->post();
         $this->product_id = uniqid();
+        $this->category_id = $post["category_id"];
         $this->name = $post["name"];
 		$this->price = $post["price"];
 		$this->image = $this->_uploadImage();
@@ -52,6 +58,7 @@ class Product_model extends CI_Model
     {
         $post = $this->input->post();
         $this->product_id = $post["id"];
+        $this->category_id = $post["category_id"];
         $this->name = $post["name"];
 		$this->price = $post["price"];
 		

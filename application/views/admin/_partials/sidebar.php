@@ -34,11 +34,17 @@
 		<span>Transactions</span></a>
 </li>
 
-<?php if( $this->session->user_logged->role === "admin" ){ ?>
 <li class="nav-item <?php echo $this->uri->segment(2) == 'products' ? 'active': '' ?>">
 	<a class="nav-link" href="<?php echo site_url('admin/products') ?>">
 		<i class="fas fa-fw fa-boxes"></i>
 		<span>Products</span></a>
+</li>
+
+<?php if( $this->session->user_logged->role === "admin" ){ ?>
+<li class="nav-item <?php echo $this->uri->segment(2) == 'categories' ? 'active': '' ?>">
+	<a class="nav-link" href="<?php echo site_url('admin/categories') ?>">
+		<i class="fas fa-fw fa-tag"></i>
+		<span>Categories</span></a>
 </li>
 
 <li class="nav-item <?php echo $this->uri->segment(2) == 'users' ? 'active': '' ?>">

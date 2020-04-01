@@ -34,7 +34,19 @@
 						</div>
 						<div class="card-body">
 
-							<form action="<?php base_url('admin/product/add') ?>" method="post" enctype="multipart/form-data" >
+							<form action="<?php base_url('admin/products/add') ?>" method="post" enctype="multipart/form-data" >
+								<div class="form-group">
+									<label for="category_id">Category*</label>
+									<select class="form-control <?php echo form_error('category_id') ? 'is-invalid':'' ?>" name="category_id" id="category_id">
+									<?php foreach ($cats as $cat): ?>
+										<option value="<?php echo $cat->id; ?>"><?php echo $cat->category_name; ?></option>
+									<?php endforeach; ?>
+									</select>
+									<div class="invalid-feedback">
+										<?php echo form_error('category_id') ?>
+									</div>
+								</div>
+
 								<div class="form-group">
 									<label for="name">Name*</label>
 									<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"

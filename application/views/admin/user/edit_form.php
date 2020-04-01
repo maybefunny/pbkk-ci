@@ -37,7 +37,7 @@
 						</div>
 						<div class="card-body">
 
-							<form action="<?php base_url(" admin/user/edit") ?>" method="post"
+							<form action="<?php base_url(" admin/users/edit") ?>" method="post"
 								enctype="multipart/form-data" >
 								<div class="form-group">
 									<label for="fullname">Full Name*</label>

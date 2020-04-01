@@ -34,7 +34,7 @@
 						</div>
 						<div class="card-body">
 
-							<form action="<?php base_url('admin/user/add') ?>" method="post" enctype="multipart/form-data" >
+							<form action="<?php base_url('admin/users/add') ?>" method="post" enctype="multipart/form-data" >
 								<div class="form-group">
 									<label for="fullname">Full Name*</label>
 									<input class="form-control <?php echo form_error('fullname') ? 'is-invalid':'' ?>"

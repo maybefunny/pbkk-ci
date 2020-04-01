@@ -10,7 +10,7 @@ class Users extends CI_Controller
         $this->load->library('form_validation');
 		$this->load->model("user_model");
 		if($this->user_model->isNotLogin()) redirect(site_url('admin/login'));
-		if($this->user_model->role !== "admin") redirect(site_url('admin/overview'));
+		if($this->session->user_logged->role != "admin") redirect(site_url('admin/overview'));
     }
 
     public function index()
@@ -26,7 +26,6 @@ class Users extends CI_Controller
 		$validation->set_rules($user->rules());
 
         if ($validation->run()) {
-			$user->username=$_POST['username'];
             $user->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
 		}

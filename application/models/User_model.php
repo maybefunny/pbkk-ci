@@ -40,6 +40,7 @@ class User_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
+		$this->username=$post['username'];
         $this->full_name = $post["full_name"];
         $this->email = $post["email"];
         $this->password = password_hash($post["password"], PASSWORD_DEFAULT);
