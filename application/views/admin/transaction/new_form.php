@@ -308,7 +308,7 @@
 					makeModal(
 						`Transaction Summary`,
 						`<div id="printArea">
-							<b>Toko Buah <sup>2</sup></b><br>
+							<b>Gerai Boba <sup>2</sup></b><br>
 							Jl jalan kemana no 21<br>No HP: 0812 1212 1212<br>
 							--------------------------------------------------
 							<table>

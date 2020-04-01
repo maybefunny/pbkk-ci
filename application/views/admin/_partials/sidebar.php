@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
 	<i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">Toko Buah <sup>2</sup></div>
+  <div class="sidebar-brand-text mx-3">Gerai Boba <sup>2</sup></div>
 </a>
 
 <!-- Divider -->
